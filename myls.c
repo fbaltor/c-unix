@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void err_sys(const char *message, char *fd) {
+void err_sys(const char *message, int fd) {
   printf(message, fd);
   exit(0);
 }
