@@ -2,7 +2,7 @@
 #define MAXLINE 1000 /* maximum input line length */
 
 // getline alt
-int getline2(char line[], int maxline);
+int getline_alt(char line[], int maxline);
 void copy(char to[], char from[]);
 
 /* print the longest input */
@@ -13,7 +13,7 @@ int main() {
   char longest[MAXLINE];
 
   max = 0;
-  while ((len = getline2(line, MAXLINE)) > 0)
+  while ((len = getline_alt(line, MAXLINE)) > 0)
     if (len > max) {
       max = len;
       copy(longest, line);
@@ -24,7 +24,7 @@ int main() {
 }
 
 // getline alternative implementation
-int getline2(char s[], int lim) {
+int getline_alt(char s[], int lim) {
   int c, i;
 
   for (i = 0; i < lim - 1 && (c = getchar()) != EOF && c != '\n'; ++i)

@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define MAXLINE 1000 /* maximum input line length */
+#define MAXLINE 10 /* maximum input line length */
 
 // getline alt
 int getline_alt(char line[], int maxline);
@@ -13,27 +13,27 @@ int main() {
   char longest[MAXLINE];
 
   max = 0;
-  while ((len = getline_alt(line, MAXLINE)) > 0)
+  while ((len = getline_alt(line, MAXLINE)) > 0) {
+    int c;
+    while ((c = getchar()) != EOF && c != '\n') {
+      ++len;
+    }
     if (len > max) {
       max = len;
       copy(longest, line);
     }
+  }
   if (max > 0) /* there was a line */
-    printf("%s", longest);
+    printf("%s -- lenght: %d", longest, max);
   return 0;
 }
 
 // getline alternative implementation
 int getline_alt(char s[], int lim) {
-  int c, i = 0;
+  int c, i;
 
-  while ((c = getchar()) != EOF && c != '\n') {
-    if (i < lim - 1)
-      s[i] = c;
-    if (i = lim - 1)
-      s[i] = '\n';
-    ++i;
-  }
+  for (i = 0; i < lim - 1 && (c = getchar()) != EOF && c != '\n'; ++i)
+    s[i] = c;
   if (c == '\n') {
     s[i] = c;
     ++i;
