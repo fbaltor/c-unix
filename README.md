@@ -1,1 +1,1 @@
-Just a way of recording my initial studies ["systems programming"](https://en.wikipedia.org/wiki/Systems_programming). Since this subject has C and UNIX as it's historical and pedagogical entry point, the name follows naturally.
+Just a way of recording my initial studies ["systems programming"](https://en.wikipedia.org/wiki/Systems_programming).
